@@ -1,0 +1,14 @@
+version: "2.1"
+services:
+  api:
+    build: .
+    image: "urbansherpa_api_dev"
+    user: "node"
+    working_dir: /home/node/app
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./:/home/node/app
+    ports:
+      - "3000:3000"
+    command: "npm run api"

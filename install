@@ -1,0 +1,5 @@
+#!/bin/bash
+source bash/execute.sh
+
+execute docker-compose build
+./run npm install
