@@ -31,3 +31,11 @@
 * Run command through docker
 
     ./run npm install
+
+## Ports
+
+app      | port
+---------|-----
+Manager  | 3000
+Api      | 3001
+Postgres | 3002
