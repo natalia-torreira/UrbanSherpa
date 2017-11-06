@@ -6,4 +6,4 @@ source bash/execute.sh
 command=$(argsToCommand "$@")
 command=$(escapeDoubleQuoates "$command")
 
-execute docker run --user=node -v $PWD:/home/node/app urbansherpa_api_dev /bin/bash -c "cd /home/node/app && $command"
+execute docker-compose run --user=node -v $PWD:/home/node/app api /bin/bash -c "cd /home/node/app && $command"
