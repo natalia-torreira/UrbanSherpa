@@ -14,6 +14,9 @@ export default class PageHeader extends React.Component {
             <li className="nav-item">
               <Link to="/" className="nav-link">Home</Link>
             </li>
+            <li className="nav-item">
+              <Link to="/sign-in" className="nav-link">Sign In</Link>
+            </li>
           </ul>
         </div>
       </header>
