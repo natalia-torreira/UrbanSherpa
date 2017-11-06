@@ -1,0 +1,46 @@
+{
+  "name": "react-node-pg-prototype",
+  "version": "0.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "UrbanSherpa Team",
+  "license": "MIT",
+  "dependencies": {
+    "acorn": "^5.2.1",
+    "ajv": "^5.3.0",
+    "babel-cli": "^6.11.4",
+    "babel-core": "^6.13.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "create-react-class": "^15.6.2",
+    "ejs": "^2.5.7",
+    "express": "^4.14.1",
+    "form-builder": "0.0.1",
+    "fsevents": "^1.1.2",
+    "install": "^0.10.1",
+    "jquery": "^3.2.1",
+    "json-loader": "^0.5.7",
+    "npm": "^5.5.1",
+    "prop-type": "0.0.1",
+    "react": "^15.6.2",
+    "react-addons": "^0.9.1-deprecated",
+    "react-dom": "^15.6.2",
+    "react-html-parser": "^2.0.1",
+    "react-jsonschema-form": "^1.0.0",
+    "react-render-html": "^0.5.2",
+    "react-router": "^2.8.1"
+  },
+  "devDependencies": {
+    "babel-loader": "^6.2.10",
+    "http-server": "^0.9.0",
+    "webpack": "^1.15.0"
+  },
+  "description": "React + NodeJS + PostgreSQL Prototype",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Dave-Agent/UrbanSherpa/tree/master/prototype"
+  }
+}

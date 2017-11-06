@@ -1,0 +1,13 @@
+body {
+  padding-top: 5rem;
+}
+
+/* FORMS */
+legend {
+  text-align: center;
+}
+.checkbox label input {
+  margin-right: 0.4rem;
+  position: relative;
+  top: -1px;
+}

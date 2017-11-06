@@ -56,3 +56,8 @@ typings/
 
 # dotenv environment variables file
 .env
+
+
+prototype/node_modules
+prototype/babel_cache
+prototype/src/static/js/app.js
