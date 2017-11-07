@@ -18,7 +18,7 @@
 
     git clone git@github.com:Dave-Agent/UrbanSherpa.git && cd UrbanSherpa
 
-* Build docker image
+* Build docker images and setup database
 
     ./install
 
@@ -27,6 +27,10 @@
 * Run
 
     ./start
+
+* Finish
+
+    ./finish
 
 * Run command through docker
 

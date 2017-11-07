@@ -1,0 +1,4 @@
+#!/bin/bash
+source bash/execute.sh
+
+execute docker-compose down
