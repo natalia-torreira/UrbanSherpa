@@ -1,4 +1,8 @@
+let formApiData = {};
+
 export const formSchema = (json) => {
+  formApiData = json;
+
   let form = json.form;
   let questions = json.questions;
   let properties = schemaProperties(json.questions);
@@ -22,8 +26,8 @@ export const formUISchema = (json) => {
   let questions = json.questions;
   let uiSchema = {};
 
-  for (let q in questions) {
-    uiSchema[schemaPropertyName(questions[q].title)] = questions[q].options;
+  for (let question in questions) {
+    uiSchema[question] = questions[question].options;
   }
 
   uiSchema['ui:rootFieldId'] = json.form.type;
@@ -31,14 +35,19 @@ export const formUISchema = (json) => {
   return uiSchema;
 };
 
+export const formOnSubmit = (formData) => {
+  for (let question in formData.formData) {
+    formApiData.questions[question]['answer'] = formData.formData[question];
+  };
+
+  console.log(formApiData);
+};
+
 const schemaProperties = (questions) => {
   let properties = {};
 
-  for (let q in questions) {
-    let property = properties[schemaPropertyName(questions[q].title)] = {};
-
-    property.type = questions[q].type;
-    property.title = questions[q].title;
+  for (let question in questions) {
+    properties[question] = questions[question].properties;
   }
 
   return properties;
@@ -47,15 +56,11 @@ const schemaProperties = (questions) => {
 const schemaRequired = (questions) => {
   let required = [];
 
-  for (let q in questions) {
-    if (questions[q].required) {
-      required.push(schemaPropertyName(questions[q].title));
+  for (let question in questions) {
+    if (questions[question].required) {
+      required.push(question);
     }
   };
 
   return required;
-};
-
-const schemaPropertyName = (title) => {
-  return title.toLowerCase().split(' ').join('_');
 };

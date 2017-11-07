@@ -7,23 +7,33 @@ const userAccountForm = {
     'type': 'user_personal'
   },
   'questions': {
-    '1': {
-      'type': 'string',
-      'title': 'Name',
+    'name': {
+      'questionId': 1,
       'required': true,
+      'properties': {
+        'type': 'string',
+        'title': 'Name',
+        'minLength': 2,
+        'maxLength': 15
+      },
       'options': {
         'ui:title': 'Your name',
         'ui:autofocus': true,
         'ui:placeholder': 'Enter your name'
       }
     },
-    '2': {
-      'type': 'integer',
-      'title': 'Age',
+    'age': {
+      'questionId': 2,
       'required': true,
+      'properties': {
+        'type': 'integer',
+        'title': 'Age',
+        'minimum': 1,
+        'maximum': 99
+      },
       'options': {
         'ui:title': 'Your age',
-        'ui:widget': 'text',
+        'ui:widget': 'updown',
         'ui:placeholder': 'Enter your age'
       }
     }
