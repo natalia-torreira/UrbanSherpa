@@ -13,8 +13,7 @@
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
     "sequelize": "^4.22.5",
-    "sequelize-cli": "^3.0.0",
-    "umzug": "^2.1.0"
+    "sequelize-cli": "^3.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
