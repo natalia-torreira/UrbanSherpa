@@ -5,3 +5,5 @@ execute docker-compose build
 ./run npm install
 
 ./run node_modules/.bin/sequelize db:migrate
+
+./run node_modules/.bin/sequelize db:seed:all
