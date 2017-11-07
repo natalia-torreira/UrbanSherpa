@@ -2,7 +2,6 @@
 
 let Bluebird = require('bluebird');
 var db = require('../models/index');
-let time = new Date(2017, 11, 7, 2, 53, 41);
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
