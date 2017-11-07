@@ -4,7 +4,15 @@ body {
 
 /* FORMS */
 legend {
+  border-bottom: 1px solid #ced4da;
+  line-height: 1;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
   text-align: center;
+}
+fieldset {
+  border-bottom: 1px solid #ced4da;
+  padding-bottom: 0.75rem;
 }
 .checkbox label input {
   margin-right: 0.4rem;
