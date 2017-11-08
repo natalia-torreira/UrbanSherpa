@@ -4,11 +4,11 @@
 
 * Install docker
 
-    https://docs.docker.com/engine/installation/
+    https://docs.docker.com/engine/installation/ [Linux](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04)
 
 * Install docker-compose
 
-    https://docs.docker.com/compose/install/
+    https://docs.docker.com/compose/install/ [Linux](https://www.digitalocean.com/community/tutorials/how-to-install-docker-compose-on-ubuntu-16-04)
 
 * Run docker command without sudo (Linux)
 
