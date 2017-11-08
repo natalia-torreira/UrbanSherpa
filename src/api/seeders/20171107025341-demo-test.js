@@ -4,6 +4,12 @@ let Bluebird = require('bluebird');
 var db = require('../models/index');
 let time = new Date(2017, 11, 7, 2, 53, 41);
 
+var user1 = {
+  user_id: 1,
+  name: 'daniel.cho@orahq.com',
+  updated_by_user_id: 1
+};
+
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return Bluebird
@@ -11,11 +17,7 @@ module.exports = {
       .then(() => {
         return db.user.findOne({where: {user_id: 1}}).then((user) => {
           if (user == null) {
-            return db.user.create({
-              user_id: 1,
-              name: 'Big Brother',
-              updated_by_user_id: 1
-            });
+            return db.user.create(user1);
           } else {
             return user.update({
               name: 'Big Brother',
@@ -78,6 +80,7 @@ module.exports = {
                           answer_details: {},
                           validation: {},
                           updated_by_user_id: user.user_id
+
                         })
                       } else {
                         return form_question.update({

@@ -1,0 +1,69 @@
+<html>
+   <body>
+     <h1>Welcome to UrbanSherpa REST API client</h1>
+     <h3>In the future it will not be required to enter updated_by_user_id as in order to use
+       the API a user will need to authenticate. The user_id related to the authenticated user
+       will be used as value for this field</h3>
+
+     <h3>Create Admin User</h3>
+     <p>Adds a dbAdmin user. If a user with id=1 already exists, then user will be updated
+     with the given email. DB Admin user should be the 1st user in the system with priviliges that
+     systemAdmin users don't have. Like enable an account to use US system.</p>
+     <form action = "http://127.0.0.1:8081/api/v1/users/create_db_admin_user" method = "GET">
+        <label for="user_name">Username</label>
+        <input id="user_name" type = "email" name = "email" placeholder="Enter dbAdmin email"><br><br>
+        <input type = "submit" value = "Add DB Admin User">
+     </form>
+     <br>
+
+     <h3>Add User</h3>
+     <p>Adds a user with the given username and role.For example, a user with owner role or systemAdmin role</p>
+     <p><strong>Roles allowed: </strong>dbAdmin, owner, systemAdmin, manager, sherpa.</p>
+     <form action = "http://127.0.0.1:8081/api/v1/users/add_user" method = "POST">
+        <label for="user_name">Username</label>
+        <input id="user_name" type = "email" name = "email" placeholder="Enter user email"><br>
+        <label for="user_role">Role</label>
+        <input id="user_role" type = "text" name = "role"><br>
+        <label for="updated_by_user_id">Updated by User ID</label>
+        <input id="updated_by_user_id" type = "number" name = "updated_by_user_id" placeholder="Enter an existing user_id"><br><br>
+        <input type = "submit" value = "Add User">
+     </form>
+     <br>
+
+     <h3>Get User by username</h3>
+     <p>Get a user with the given username (email address).</p>
+     <form action = "http://127.0.0.1:8081/api/v1/users?email=" method = "GET">
+        <label for="user_name">Username</label>
+        <input id="user_name" type = "email" name = "email"><br><br>
+        <input type = "submit" value = "Get User">
+     </form>
+     <br>
+
+     <h3>Create Account</h3>
+     <p>Creates an account for the given owner. The owner is the person who pays for the license
+     to use US System. Please make sure you have created a user for the owner before creating an account.</p>
+     <form action = "http://127.0.0.1:8081/api/v1/accounts/createAccount" method = "POST">
+        <label for="user_id">Owner User_Id</label>
+        <input id="user_id" type = "integer" name = "user_id"><br>
+        <label for="name">Account Name</label>
+        <input id="name" type = "text" name = "name" placeholder="Enter an Account Name"><br>
+        <label for="updated_by_user_id">Updated by User ID</label>
+        <input id="updated_by_user_id" type = "number" name = "updated_by_user_id" placeholder="Enter an existing user_id"><br><br>
+        <input type = "submit" value = "Add Account">
+     </form>
+     <br>
+
+     <h3>Add Vertical</h3>
+     <form action = "http://127.0.0.1:8081/api/v1/verticals/addVertical" method = "POST">
+        <label for="vertical_name">Vertical Name</label>
+        <input id="vertical_name" type = "text" name = "vertical_name"><br>
+        <label for="vertical_description">Vertical Description</label>
+        <input id="vertical_description" type = "text" name = "vertical_description"><br>
+        <label for="updated_by_user_id">Updated by User ID</label>
+        <input id="updated_by_user_id" type = "number" name = "updated_by_user_id" placeholder="Enter an existing user_id"><br><br>
+        <input type = "submit" value = "Add Vertical">
+     </form>
+     <br>
+
+   </body>
+</html>
