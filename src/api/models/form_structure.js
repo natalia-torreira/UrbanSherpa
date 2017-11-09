@@ -1,17 +1,13 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  var form_submission = sequelize.define('form_submission', {
-    form_submission_id: {
-      type: DataTypes.INTEGER,
-      primaryKey: true,
-      autoIncrement: true
-    },
-    user_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false
-    }
+  var form_structure = sequelize.define('form_structure', {
     form_id: {
       type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: false
+    },
+    structure: {
+      type: DataTypes.JSON,
       allowNull: false
     },
     created_at: {
@@ -38,5 +34,5 @@ module.exports = (sequelize, DataTypes) => {
     },
     underscored: true
   });
-  return form_submission;
+  return form_structure;
 };

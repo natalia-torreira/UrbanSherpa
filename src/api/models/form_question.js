@@ -1,15 +1,43 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   var form_question = sequelize.define('form_question', {
-    form_question_id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-    form_id: DataTypes.INTEGER,
-    order: DataTypes.INTEGER,
-    question: DataTypes.STRING,
-    answer_type: DataTypes.STRING,
-    answer_details: DataTypes.JSON,
-    validation: DataTypes.JSON,
-    updated_by_user_id: DataTypes.INTEGER
+    form_question_id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
+    },
+    question: {
+      type: DataTypes.STRING,
+      allowNull: false
+    }
+    data_type: {
+      type: DataTypes.STRING(45),
+      allowNull: false
+    }
+    default_options: {
+      type: DataTypes.JSON,
+      allowNull: false
+    }
+    created_at: {
+      type: DataTypes.TIMESTAMP,
+      allowNull: false,
+      defaultValue: DataTypes.NOW
+    },
+    updated_at: {
+      type: DataTypes.TIMESTAMP,
+      allowNull: false,
+      defaultValue: DataTypes.NOW
+    },
+    updated_by_user_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    notes: {
+      type: DataTypes.STRING
+    }
   }, {
+    getterMethods: {},
+    setterMethods: {},
     classMethods: {
       associate: function(models) {
         // associations can be defined here
