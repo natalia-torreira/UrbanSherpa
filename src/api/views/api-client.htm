@@ -31,7 +31,7 @@
      <br>
 
      <h3>Get User by username</h3>
-     <p>Get a user with the given username (email address).</p>
+     <p>Get a user with the given username (email address).Ex: Returns user_id and role</p>
      <form action = "http://127.0.0.1:8081/api/v1/users?email=" method = "GET">
         <label for="user_name">Username</label>
         <input id="user_name" type = "email" name = "email"><br><br>
@@ -62,6 +62,15 @@
         <label for="updated_by_user_id">Updated by User ID</label>
         <input id="updated_by_user_id" type = "number" name = "updated_by_user_id" placeholder="Enter an existing user_id"><br><br>
         <input type = "submit" value = "Add Vertical">
+     </form>
+     <br>
+
+     <h3>Get form structure</h3>
+     <p>Returns the Json structure of the form with the given form_id.</p>
+     <form action = "http://127.0.0.1:8081/api/v1/forms" method = "GET">
+        <label for="form_id">Form Id</label>
+        <input id="form_id" type = "number" name = "form_id"><br><br>
+        <input type = "submit" value = "Get Form">
      </form>
      <br>
 
