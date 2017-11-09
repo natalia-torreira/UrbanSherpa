@@ -1,50 +1,35 @@
-import express from 'express';
-import path from 'path'; //this is used to redirect to a system file.
-import bodyParser from 'body-parser'; //node.js body parsing middleware.
+/*This is the file that will be called when npm api is executed*/
 
+import express from 'express';
 
 const app = express();
 const path = '/api/v1/'
+var form_operations = require('api/js/form_operations');
 
-/*
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
   next();
 })
 
-app.get('/', (req, res) => {
-  const Sequelize = require('sequelize');
-  const sequelize = new Sequelize(process.env.POSTGRES_DATABASE, process.env.POSTGRES_USER, process.env.POSTGRES_PASSWORD, {
-    host: process.env.POSTGRES_HOST,
-    port: process.env.POSTGRES_PORT,
-    dialect: 'postgres',
-    pool: {
-      max: 5,
-      min: 0,
-      acquire: 30000,
-      idle: 10000
-    },
-  });
-  sequelize
-    .authenticate()
-    .then(() => res.send('hello world from api'));
+app.get('/api/v1', function (req, res){
+  console.log("Got a GET request for the UrbanSherpa Rest API page");
 })
+
+app.get('/api/v1/forms', function (req, res){
+  console.log("Got a GET request to retrieve the form with form_id: "+req.query.form_id);
+  form_operations.getFormJsonStructureById(req.query.form_id, function(err, data){
+    if(err){
+      //In this case data will have the details of the error message.
+      res.status(400).send(data);
+    }
+    else{
+      console.log("Form structure: "+ data);
+      res.send(data);
+    }
+  });
+})
+
 
 app.listen(3001, () => {
   console.log('Example app listening on port 3001!');
-})
-*/
-
-app.get('/api/v1', function (req, res){
-  console.log("Got a GET request for the UrbanSherpa Rest API page");
-  //use of path.resolve to make a path absolute.
-  res.sendFile(path.resolve('src/views/api_client.htm'));
-})
-
-
-var server = app.listen(8081, function () {
-  var host = server.address().address
-  var port = server.address().port
-  console.log("UrbanSherpa API listening at http://%s:%s", host, port)
-
 })
