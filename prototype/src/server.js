@@ -32,19 +32,7 @@ app.get('*', (req, res) => {
         return res.redirect(302, redirectLocation.pathname + redirectLocation.search);
       }
 
-      // generate the React markup for the current route
-      let markup;
-      if (renderProps) {
-        // if the current route matched we have renderProps
-        markup = renderToString(<RouterContext {...renderProps} />);
-      } else {
-        // otherwise we can render a 404 page
-        markup = renderToString(<PageNotFound />);
-        res.status(404);
-      }
-
-      // render the index template with the embedded React markup
-      return res.render('index', { markup });
+      return res.render('index');
     }
   );
 });

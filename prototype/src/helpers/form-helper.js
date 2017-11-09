@@ -4,10 +4,10 @@ export const formSchema = (json) => {
   const properties = schemaProperties(json.questions);
   const required = schemaRequired(json.questions);
   const schema = {
-    'title':      form.title,
-    'type':       'object',
-    'properties': properties,
-    'required':   required
+    type:       'object',
+    title:      form.title,
+    properties: properties,
+    required:   required
   };
 
   if (json.form.description && json.form.description.length > 0) {
