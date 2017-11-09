@@ -1,13 +1,9 @@
-let formApiData = {};
-
 export const formSchema = (json) => {
-  formApiData = json;
-
-  let form = json.form;
-  let questions = json.questions;
-  let properties = schemaProperties(json.questions);
-  let required = schemaRequired(json.questions);
-  let schema = {
+  const form = json.form;
+  const questions = json.questions;
+  const properties = schemaProperties(json.questions);
+  const required = schemaRequired(json.questions);
+  const schema = {
     'title':      form.title,
     'type':       'object',
     'properties': properties,
@@ -22,11 +18,11 @@ export const formSchema = (json) => {
 };
 
 export const formUISchema = (json) => {
-  let form = json.form;
-  let questions = json.questions;
+  const form = json.form;
+  const questions = json.questions;
   let uiSchema = {};
 
-  for (let question in questions) {
+  for (const question in questions) {
     uiSchema[question] = questions[question].options;
   }
 
@@ -35,18 +31,33 @@ export const formUISchema = (json) => {
   return uiSchema;
 };
 
-export const formOnSubmit = (formData) => {
-  for (let question in formData.formData) {
-    formApiData.questions[question]['answer'] = formData.formData[question];
+export const formOnSubmit = (formData, formStructure) => {
+  let answers     = [];
+  let requestData = {
+    form_submission_id:      formStructure.form.form_submission_id,
+    form_submission_answers: null
   };
 
-  console.log(formApiData);
+  for (const question in formData) {
+    let answer    = {};
+    const answer_id = formStructure.questions[question]['form_submission_answer_id'];
+
+    answer['form_question_id']          = formStructure.questions[question]['form_question_id'];
+    answer['answer']                    = formData[question];
+    answer['form_submission_answer_id'] = answer_id;
+
+    answers.push(answer);
+  };
+
+  requestData.form_submission_answers = answers;
+
+  return requestData;
 };
 
 const schemaProperties = (questions) => {
   let properties = {};
 
-  for (let question in questions) {
+  for (const question in questions) {
     properties[question] = questions[question].properties;
   }
 
@@ -56,7 +67,7 @@ const schemaProperties = (questions) => {
 const schemaRequired = (questions) => {
   let required = [];
 
-  for (let question in questions) {
+  for (const question in questions) {
     if (questions[question].required) {
       required.push(question);
     }
