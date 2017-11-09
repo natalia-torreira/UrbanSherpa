@@ -169,7 +169,7 @@ const create_init_tables = `
   )
   ;
 
-  comment on table form_structure is 'Defines the form structure for a specific form'
+  comment on table form_structures is 'Defines the form structure for a specific form'
   ;
 
   create table form_questions
@@ -234,7 +234,7 @@ const drop_init_tables = `
   drop table forms;
   drop table form_submissions;
   drop table form_submission_answers;
-  drop table form_structure;
+  drop table form_structures;
   drop table form_questions;
   drop table accounts;
   drop table account_verticals;
