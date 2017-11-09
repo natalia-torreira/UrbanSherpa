@@ -24,16 +24,6 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.BOOLEAN,
       allowNull: false,
       defaultValue: false
-    }
-    created_at: {
-      type: DataTypes.TIMESTAMP,
-      allowNull: false,
-      defaultValue: DataTypes.NOW
-    },
-    updated_at: {
-      type: DataTypes.TIMESTAMP,
-      allowNull: false,
-      defaultValue: DataTypes.NOW
     },
     updated_by_user_id: {
       type: DataTypes.INTEGER,

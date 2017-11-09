@@ -1,11 +1,12 @@
-const Sequilize = require('sequelize');
-var database = require('./config/database');
+const Sequelize = require('sequelize');
+var database = require('../config/database');
 var Vertical = require('../models/vertical');
+let vertical_db = {};
 module.exports = vertical_db;
 
 var myCon = database.development;
 
-const sequilize = new Sequelize(myCon.database,
+const sequelize = new Sequelize(myCon.database,
   myCon.username, myCon.password, {
   host: myCon.host,
   //port: process.env.POSTGRES_PORT,
@@ -15,7 +16,7 @@ const sequilize = new Sequelize(myCon.database,
 
 //Select vertical by id.
 vertical_db.selectVerticalById = function selectVerticalById(id, callback){
-  sequilize.authenticate()
+  sequelize.authenticate()
   .then(() => {
     console.log('Connection has been established successfully.');
     //retrieve data from db

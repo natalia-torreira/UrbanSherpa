@@ -73,6 +73,6 @@ INSERT INTO "urbansherpa-prototype".form_questions (form_question_id, question, 
     }', 1, 'Field to enter user''s name');
 
 
-/*Insert form structure dummy data*/
- INSERT INTO "urbansherpa-prototype".form_structure (form_id, structure, updated_by_user_id) VALUES (1, '{ "1":{ "questionOrder": 1},"2":{ "questionOrder": 2}}', 1);
+/*Insert form structures dummy data*/
+ INSERT INTO "urbansherpa-prototype".form_structures (form_id, structure, updated_by_user_id) VALUES (1, '{ "1":{ "questionOrder": 1},"2":{ "questionOrder": 2}}', 1);
 

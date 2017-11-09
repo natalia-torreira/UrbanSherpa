@@ -9,24 +9,14 @@ module.exports = (sequelize, DataTypes) => {
     question: {
       type: DataTypes.STRING,
       allowNull: false
-    }
+    },
     data_type: {
       type: DataTypes.STRING(45),
       allowNull: false
-    }
+    },
     default_options: {
       type: DataTypes.JSON,
       allowNull: false
-    }
-    created_at: {
-      type: DataTypes.TIMESTAMP,
-      allowNull: false,
-      defaultValue: DataTypes.NOW
-    },
-    updated_at: {
-      type: DataTypes.TIMESTAMP,
-      allowNull: false,
-      defaultValue: DataTypes.NOW
     },
     updated_by_user_id: {
       type: DataTypes.INTEGER,
