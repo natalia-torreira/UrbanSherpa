@@ -22,16 +22,6 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.TEXT,
       allowNull: false
     },
-    created_at: {
-      type: DataTypes.TIMESTAMP,
-      allowNull: false,
-      defaultValue: DataTypes.NOW
-    },
-    updated_at: {
-      type: DataTypes.TIMESTAMP,
-      allowNull: false,
-      defaultValue: DataTypes.NOW
-    },
     updated_by_user_id: {
       type: DataTypes.INTEGER,
       allowNull: false

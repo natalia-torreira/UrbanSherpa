@@ -1,11 +1,12 @@
-const Sequilize = require('sequelize');
-var database = require('./config/database');
+const Sequelize = require('sequelize');
+var database = require('../config/database');
 var Form_Submission = require('../models/form_submission');
+let form_submission_db = {};
 module.exports = form_submission_db;
 
 var myCon = database.development;
 
-const sequilize = new Sequelize(myCon.database,
+const sequelize = new Sequelize(myCon.database,
   myCon.username, myCon.password, {
   host: myCon.host,
   //port: process.env.POSTGRES_PORT,
@@ -15,7 +16,7 @@ const sequilize = new Sequelize(myCon.database,
 
 //Select form_submission by id.
 form_submission_db.selectFormSubmissionById = function selectFormSubmissionById(id, callback){
-  sequilize.authenticate()
+  sequelize.authenticate()
   .then(() => {
     console.log('Connection has been established successfully.');
     //retrieve data from db

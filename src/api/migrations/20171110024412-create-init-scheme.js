@@ -157,7 +157,7 @@ const create_init_tables = `
   comment on table form_submission_answers is 'Stores form submission answers'
   ;
 
-  create table form_structure
+  create table form_structures
   (
     form_id integer not null
     constraint form_structure_form_id_pk

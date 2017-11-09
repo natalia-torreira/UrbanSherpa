@@ -1,9 +1,10 @@
-var form_db_models = require('./db/form_db_models');
-var models = require('./models/index');
+var form_db_models = require('../db/form_db_models');
+var models = require('../models/index');
 
+let form_operations = {};
 module.exports = form_operations;
 
-Form_Operations.getFormJsonStructureById = function getFormJsonStructureById(form_id, callback){
+form_operations.getFormJsonStructureById = function getFormJsonStructureById(form_id, callback){
     //get form structure
     var form_structure = {}; //this variable will contain the final result, the structure for the form.
     form_operations.form_db.selectFormById(form_id, function(err, form){
@@ -32,3 +33,4 @@ Form_Operations.getFormJsonStructureById = function getFormJsonStructureById(for
 
       }
   });
+};

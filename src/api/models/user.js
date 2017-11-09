@@ -7,19 +7,9 @@ module.exports = (sequelize, DataTypes) => {
       autoIncrement: true
     },
     user_name: {
-      DataTypes.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
       unique: true
-    },
-    created_at: {
-      type: DataTypes.TIMESTAMP,
-      allowNull: false,
-      defaultValue: DataTypes.NOW
-    },
-    updated_at: {
-      type: DataTypes.TIMESTAMP,
-      allowNull: false,
-      defaultValue: DataTypes.NOW
     },
     updated_by_user_id: {
       type: DataTypes.INTEGER,
