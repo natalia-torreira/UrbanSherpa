@@ -14,8 +14,25 @@ fieldset {
   border-bottom: 1px solid #ced4da;
   padding-bottom: 0.75rem;
 }
+.control-label {
+  margin-bottom: 0.25rem;
+}
 .checkbox label input {
   margin-right: 0.4rem;
   position: relative;
   top: -1px;
+}
+.help-block {
+  color: #737373;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0.25rem;
+}
+.form-group .error-detail {
+  margin-bottom: 0.25rem;
+  margin-top: -0.3rem;
+  padding-left: 1.5rem;
+}
+.form-group .error-detail .text-danger {
+  font-size: 0.85rem;
 }

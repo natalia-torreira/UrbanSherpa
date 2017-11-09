@@ -36,6 +36,8 @@ export default class FormUserInfo extends React.Component {
           </div>
         }
         <Form
+          noHtml5Validate={true}
+          showErrorList={false}
           schema={formSchema(this.formStructure)}
           uiSchema={formUISchema(this.formStructure)}
           onSubmit={this.onSubmit}
