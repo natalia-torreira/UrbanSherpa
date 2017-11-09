@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import Form from 'react-jsonschema-form';
 import Axios from 'axios';
+import AlertMessage from './AlertMessage';
 import { formSchema, formUISchema, formOnSubmit } from '../helpers/form-helper';
 
 export default class FormUserInfo extends React.Component {
@@ -31,9 +32,7 @@ export default class FormUserInfo extends React.Component {
     return (
       <div className="form-sign-in" id="formSignIn">
         {this.state.submitted &&
-          <div className="alert alert-success" role="alert">
-            Account successfully saved.
-          </div>
+          <AlertMessage type={'success'} message='Account successfully saved.' />
         }
         <Form
           noHtml5Validate={true}
