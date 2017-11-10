@@ -33,7 +33,7 @@ app.get('/forms/:form_id', (req, res) => {
     db.form_question.findAll({where: {form_id: req.params.form_id}, order: []}).then((questions) => {
       let formatQuestions = {};
 
-      questions.each((aa, question) => {
+      questions.each((question) => {
         formatQuestions[question.question] = {
           required: true,
           properties: {
@@ -47,13 +47,13 @@ app.get('/forms/:form_id', (req, res) => {
             "ui:placeholder": 'Enter'
           }
         }
-      }
+      });
 
       let data = {
         form_id:   form.form_id,
         name:      form.name,
         questions: formatQuestions
-      }
+      };
 
       res.json(data);
     });
