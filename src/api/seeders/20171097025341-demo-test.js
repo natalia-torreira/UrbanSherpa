@@ -89,5 +89,5 @@ const insert_dummy_data = `
 
 
   /*Insert form structure dummy data*/
-  INSERT INTO form_structure (form_id, structure, updated_by_user_id, created_at, updated_at) VALUES (1, '{ "1":{ "questionOrder": 1},"2":{ "questionOrder": 2}}', 1, '2017-11-09', '2017-11-09');
+  INSERT INTO form_structures (form_id, structure, updated_by_user_id, created_at, updated_at) VALUES (1, '{ "1":{ "questionOrder": 1},"2":{ "questionOrder": 2}}', 1, '2017-11-09', '2017-11-09');
 `

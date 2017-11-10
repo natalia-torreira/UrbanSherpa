@@ -145,10 +145,10 @@ create table form_submission_answers
 comment on table form_submission_answers is 'Stores form submission answers'
 ;
 
-create table form_structure
+create table form_structures
 (
 	form_id integer not null
-		constraint form_structure_form_id_pk
+		constraint form_structures_form_id_pk
 			primary key,
 	structure json not null,
 	created_at timestamp default now() not null,
@@ -157,7 +157,7 @@ create table form_structure
 )
 ;
 
-comment on table form_structure is 'Defines the form structure for a specific form'
+comment on table form_structures is 'Defines the form structure for a specific form'
 ;
 
 create table form_questions
@@ -210,4 +210,3 @@ create table account_verticals
 
 comment on table account_verticals is 'Stores verticals available per each Account'
 ;
-
